@@ -21,6 +21,3 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-  
-# after_deploy:
-#  - push to docker hub?
