@@ -1,9 +1,12 @@
 language: bash
 
-sudo: required
+sudo: false
 
 services:
   - docker
+  
+cache:
+  - apt
 
 before_install:
   - docker build -t debian-phantomjs .
