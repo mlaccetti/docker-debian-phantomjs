@@ -1,6 +1,6 @@
 language: bash
 
-sudo: false
+sudo: required
 
 services:
   - docker
