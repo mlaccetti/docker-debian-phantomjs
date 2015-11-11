@@ -8,13 +8,7 @@
 # Grabbing the binary:
 # $ docker cp debian-phantomjs:/usr/bin/phantomjs phantomjs 
 
-FROM debian:jessie
-
-# Update the container
-RUN apt-get update
-
-# Install build tools
-RUN apt-get install -y wget curl unzip python perl build-essential flex bison gperf ruby 
+FROM mlaccetti/docker-debian-build
 
 # Install compilation dependencies
 RUN apt-get install -y libicu-dev libfontconfig1-dev libjpeg-dev libfreetype6 libsqlite3-dev libssl-dev libpng-dev
