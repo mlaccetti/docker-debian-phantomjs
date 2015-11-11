@@ -1,0 +1,21 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t debian-phantomjs .
+
+script:
+  - docker cp debian-phantomjs:/usr/bin/phantomjs phantomjs 
+
+deploy:
+  provider: releases
+  api_key: "GITHUB OAUTH TOKEN"
+  file: "phantomjs"
+  skip_cleanup: true
+  on:
+    tags: true
+	
+# after_deploy:
+#  - push to docker hub?
