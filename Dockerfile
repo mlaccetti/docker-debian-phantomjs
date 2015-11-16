@@ -3,12 +3,14 @@
 # $ docker build -t debian-phantomjs .
 #
 # Running:
-# $ docker run --name my-phantomjs debian-phantomjs
+# $ docker run --name my-debian-phantomjs -it --rm debian-phantomjs
 #
 # Grabbing the binary:
 # $ docker cp debian-phantomjs:/usr/bin/phantomjs phantomjs 
 
 FROM mlaccetti/docker-debian-build
+
+MAINTAINER Michael Laccetti <michael@laccetti.com> (https://laccetti.com/)
 
 # Install compilation dependencies
 RUN apt-get install -y libicu-dev libfontconfig1-dev libjpeg-dev libfreetype6 libsqlite3-dev libssl-dev libpng-dev
